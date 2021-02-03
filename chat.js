@@ -34,10 +34,14 @@ messageField.keypress(function (e) {
         var flg1 = datacheck(username);
         if(flg1 == 1){
             namei.style.background = "#ffdce4";     //ユーザー名のテキストボックスの背景色を変更
+        }else{
+            namei.style.background = "";
         }
         var flg2 = datacheck(message);
         if(flg2 == 1){
             messagei.style.background = "#e1eefe";  //メッセージのテキストボックスの背景色を変更
+        }else{
+            messagei.style.background = "";
         }
 
         //エスケープ処理
@@ -120,6 +124,8 @@ form.addEventListener('submit', function (e) {
     var flg1 = datacheck(username);
     if(flg1 == 1){
         namei.style.background = "#ffdce4";
+    }else{
+        namei.style.background = "";
     }
     //エスケープ処理
     username = escape(username);
@@ -169,7 +175,6 @@ function datacheck(data){
     if(data == '' || data.slice(0, 1) == ' ' || data.slice(0, 1) == '　'){
         flg = 1;
     }else{
-        namei.style.background = "";
         flg = 0;
     } 
     return flg;
